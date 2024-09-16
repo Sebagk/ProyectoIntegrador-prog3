@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./pages/Error404";
 
+
+
 function App() {
   return (
     <div className="App">
