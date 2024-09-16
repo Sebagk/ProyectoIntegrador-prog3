@@ -1,4 +1,4 @@
-import React from "react";
+import React from "React";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./pages/Error404";
