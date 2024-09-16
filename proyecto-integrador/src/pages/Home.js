@@ -2,14 +2,15 @@ import React from 'react'
 import SearchForm from '../components/SearchForm/SearchForm'
 import CardGrid from "../components/CardGrid/CardGrid"
 
-const Home = () => {
+const Home = (props) => {
   return (
-    <div>
+    <main>
         {/* <SearchForm history={this.props.history} /> */}
         <SearchForm/>
         <h1>Hola react</h1>
-        <CardGrid />
-    </div>
+        <CardGrid api={"https://api.themoviedb.org/3/movie/popular"}/>
+        <CardGrid api={"https://api.themoviedb.org/3/movie/now_playing"}/>
+    </main>
   )
 }
 

@@ -1,22 +1,23 @@
 import React from "react";
 import { Component } from "react";
 import { options } from "../../options";
-
+import Card from "../Card/Card"
 
 class CardGrid extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        
+        peliculas: []
       };
     }
     componentDidMount() {
-      fetch("https://api.themoviedb.org/3/genre/movie/list", options)
+      const api = this.props.api
+      fetch(api, options)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
           this.setState({
-            
+            peliculas: data.results
           });
         })
         .catch((error) => {
@@ -26,13 +27,13 @@ class CardGrid extends Component {
     render() {
       return (
         <div>
-          {/* {this.state.characters.length > 0 ? (
-            this.state.characters.map((character, index) => (
-              <CharacterCard character={character} key={index} />
-            ))
-          ) : (
-            <p>Cargando...</p>
-          )} */}
+          {this.state.peliculas.length > 0 ? (
+          this.state.peliculas.slice(0, 5).map((pelicula, index) => (
+            <Card pelicula={pelicula} key={index} />
+          ))
+        ) : (
+          <p>Cargando...</p>
+        )}
         </div>
       );
     }
