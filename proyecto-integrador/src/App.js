@@ -1,6 +1,8 @@
 import React from "react";
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import Home from "./pages/Home";
+import React from "React";
+import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./pages/Error404";
 function App() {
