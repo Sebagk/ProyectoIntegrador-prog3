@@ -1,4 +1,4 @@
-import { Component } from 'React'
+import { Component } from 'react'
 
 class SearchForm extends Component {
 
@@ -20,12 +20,11 @@ class SearchForm extends Component {
     }
 
     render(){
-    return (
-        <div>
-            <input onChange={(e)=>this.handleInputChange(e)} type='text' name='query' value={this.state.query}/>
-            <button>Search Movie</button>
-        <div/>
-  )
+    return (<div>
+        <input onChange={(e)=>this.handleInputChange(e)} type='text' name='query' value={this.state.query}/>
+        <button>Search Movie</button>
+    </div>)}
+        
 }
 
-export default SearchForm 
+export default SearchForm;

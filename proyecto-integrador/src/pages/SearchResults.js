@@ -1,4 +1,4 @@
-import {Component} from 'React'
+import {Component} from 'react'
 
 export default class SearchResults extends Component{
 
@@ -10,4 +10,4 @@ render(){
     <div> searchResults {this.location.state.query}</div>
   )
     }
-}
+} 
