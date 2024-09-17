@@ -1,0 +1,7 @@
+.card-grid-container {
+    display: flex;
+    gap: 35px;
+    padding: 20px;
+    justify-items: center;
+    background-color: #f9f9f9;
+  }
