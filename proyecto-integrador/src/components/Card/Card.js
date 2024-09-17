@@ -11,10 +11,49 @@ class Card extends Component {
     };
   }
 
+  componentDidMount(){
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null) {
+      const parsedArray = JSON.parse(storage)
+      const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
+      this.setState({
+        esFavorito: estaEnFavoritos
+      })
+    }
+  }
+
   handleShowextra() {
     this.setState({
       extra: !this.state.extra
     });
+  }
+
+  agregarFavorito(){
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null) {
+      const parsedArray = JSON.parse(storage)
+      parsedArray.push(this.props.movie.id)
+      const stringArray = JSON.stringify(parsedArray)
+      localStorage.setItem('favoritos', stringArray)
+    } else {
+      const primerMovie = [this.props.movie.id]
+      const stringArray = JSON.stringify(primerMovie)
+      localStorage.setItem('favoritos', stringArray)
+    }
+    this.setState({
+      esFavorito: true
+    })
+  }
+
+  sacarFavorito(){
+    const storage = localStorage.getItem('favoritos')
+    const parsedArray = JSON.parse(storage)
+    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
+      const stringArray = JSON.stringify(favoritosRestantes)
+      localStorage.setItem('favoritos', stringArray)
+      this.setState({
+        esFavorito: false
+      })
   }
 
   render() {
@@ -41,7 +80,10 @@ class Card extends Component {
         <section className={this.state.extra ? "show" : "hide"}>
           <p>{overview}</p>
         </section>
-        <button className="favoritos-button">Agregar a favoritos</button>
+        <button className="favoritos-button" onClick= {() => !this.state.esFavorito ?
+        this.agregarFavorito() : this.sacarFavorito()}> 
+        {!this.state.esFavorito ? "agregar a favoritos" : 
+        "Quitar de favoritos"}</button>
       </article>
     );
   }
