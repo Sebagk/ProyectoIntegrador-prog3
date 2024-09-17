@@ -2,7 +2,8 @@ import React from "react";
 import { Component } from "react";
 import { options } from "../../options";
 import Card from "../Card/Card";
-import "./CardGrid.css"; // Añadimos el archivo de estilos
+import "./CardGrid.css"; 
+import { Link } from "react-router-dom";
 
 class CardGrid extends Component {
   constructor(props) {
@@ -29,15 +30,21 @@ class CardGrid extends Component {
 
   render() {
     return (
-      <div className="card-grid-container">
+      <section className="card-grid-container">
+        <div>
+          <Link to={this.props.link}><h4>Ver todas</h4></Link>
+          </div>
+          <div>
         {this.state.peliculas.length > 0 ? (
           this.state.peliculas.slice(0, 5).map((pelicula, index) => (
             <Card pelicula={pelicula} key={index} />
+            
           ))
         ) : (
           <p>Cargando...</p>
         )}
-      </div>
+        </div>
+      </section>
     );
   }
 }

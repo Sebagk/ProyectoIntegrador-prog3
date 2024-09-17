@@ -1,75 +1,83 @@
-.character-card {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 1s;
-  }
-  
-  .character-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .character-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
-  }
-  
-  .character-card img:hover {
-    transform: scale(1.1);
-  }
-  
-  .card-title {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 15px 0;
-  }
-  
-  .card-title h4 {
-    margin: 0;
-  }
-  
-  .toggle-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-  }
-  
-  .toggle-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .show {
-    display: block;
-    padding-top: 10px;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  .delete {
-    color: #dc3545;
-    font-size: 0.9em;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: color 0.3s;
-  }
-  
-  .delete:hover {
-    color: #a71d2a;
-  }
-  
+.movie-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 1s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+
+
+.movie-title {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin: 15px 0;
+}
+
+.movie-title h4 {
+  margin: 0;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.show {
+  display: block;
+  padding-top: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.delete {
+  color: #dc3545;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.delete {
+  color: #a71d2a;
+}
+.favoritos-button {
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}

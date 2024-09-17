@@ -20,15 +20,18 @@ class Card extends Component {
   render() {
     const { id, title, poster_path, overview } = this.props.pelicula;
     return (
-      <article className="character-card">
-        <img
-          src={`https://image.tmdb.org/t/p/w400${poster_path}`}
-          alt={title}
-          className="card-image"
-        />
-        <Link to={`/movies/${id}`} className="card-title">
-          <h4>{title}</h4>
-        </Link>
+      <article className="movie-card">
+        <Link to={`/movies/${id}`}>
+          <img
+            src={`https://image.tmdb.org/t/p/w400${poster_path}`}
+            alt={title}
+            className="card-image"
+          />
+          </Link>
+          <Link to={`/movies/${id}`} className="movie-title">
+            <h4>{title}</h4>
+          </Link>
+
         <button
           className="toggle-button"
           onClick={() => this.handleShowextra()}
@@ -38,7 +41,7 @@ class Card extends Component {
         <section className={this.state.extra ? "show" : "hide"}>
           <p>{overview}</p>
         </section>
-        <p className="delete">Borrar</p>
+        <button className="favoritos-button">Agregar a favoritos</button>
       </article>
     );
   }
