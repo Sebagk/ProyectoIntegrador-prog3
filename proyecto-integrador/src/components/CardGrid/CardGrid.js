@@ -36,7 +36,7 @@ class CardGrid extends Component {
           </div>
           <div>
         {this.state.peliculas.length > 0 ? (
-          this.state.peliculas.slice(0, 5).map((pelicula, index) => (
+          this.state.peliculas.slice(0, this.props.cantidad).map((pelicula, index) => (
             <Card pelicula={pelicula} key={index} />
             
           ))
