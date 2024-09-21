@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Error404 from "./pages/Error404";
 import Populares from "./pages/Populares"
 import Estrenos from "./pages/Estrenos";
+import Detalle from "./pages/Detalle";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path = "/" exact component = {Home}/>
         <Route path="/populares" exact component={Populares} />
         <Route path="/estrenos" exact component={Estrenos} />
+        <Route path="/detalle" exact component={Detalle} />
         <Route component={Error404} />
       </Switch>
       <Footer />
