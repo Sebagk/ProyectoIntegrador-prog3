@@ -17,7 +17,7 @@ const Detalle = (props) => {
 
   return (
       <div>
-          <p></p>
+          <p>{movie.title}</p>
       </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { options } from "../options";
 
 class Favoritos extends Component {
     constructor(props) {
@@ -14,17 +15,19 @@ class Favoritos extends Component {
         this.setState({
             isLoading: true
         })
-        const parsedArray = JSON.parse(storage)
+        const parsedArray = JSON.parse(localStorage.getItem('favoritos'))
 
         Promise.all(
             parsedArray.map((id)=>{
-                fetch('Url de la movie')
+                fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
                 .then(response => response.json())
                 .then(movie => 
                     this.setState({
                         movies: [...this.state.movies, movie]
-                }    )
+                    })
                 )
+                .catch(e => 
+                    console.log(e));
             })
         )
         this.setState({
@@ -34,7 +37,7 @@ class Favoritos extends Component {
 
     render(){
         return(
-            <div>{!this.state.isLoading ? <>GRILLA</> : 
+            <div>{!this.state.isLoading ? <>AGREGAR LA GRILLA DE CARDSGRID</> : 
                 <p>Loading...</p>}
             </div>
         )

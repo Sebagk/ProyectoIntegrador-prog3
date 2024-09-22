@@ -7,6 +7,7 @@ import Error404 from "./pages/Error404";
 import Populares from "./pages/Populares"
 import Estrenos from "./pages/Estrenos";
 import Detalle from "./pages/Detalle";
+import Favoritos from "./pages/Favoritos";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/populares" exact component={Populares} />
         <Route path="/estrenos" exact component={Estrenos} />
         <Route path="/movies/:id" exact component={Detalle} />
+        <Route path="/favoritos" exact component={Favoritos} />
         <Route component={Error404} />
       </Switch>
       <Footer />
