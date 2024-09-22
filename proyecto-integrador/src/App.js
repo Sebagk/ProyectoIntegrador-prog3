@@ -16,7 +16,7 @@ function App() {
         <Route path = "/" exact component = {Home}/>
         <Route path="/populares" exact component={Populares} />
         <Route path="/estrenos" exact component={Estrenos} />
-        <Route path="/detalle" exact component={Detalle} />
+        <Route path="/movies/:id" exact component={Detalle} />
         <Route component={Error404} />
       </Switch>
       <Footer />
