@@ -29,8 +29,28 @@ class Detalle extends Component {
 
 
     render() {
-      const { poster_path, title, vote_average, genres, release_date, runtime, overview }
+      const { poster_path, title, vote_average, genres, release_date, runtime, overview } = this.state.movie
+      const generos = genres.map(genre=>genre.name).join(',');
+      
       return (
+        <div className="movie-detail">
+      {poster_path && (
+        <img 
+          src={`https://image.tmdb.org/t/p/w400${poster_path}`} 
+          alt={title} 
+          className="movie-poster" 
+        />
+      )}
+      <h1 className="movie-title">{title}</h1>
+      <div className="movie-info">
+        <p><strong>Rating:</strong> {vote_average}</p>
+        <p><strong>Genres:</strong> {generos}</p>
+        <p><strong>Release Date:</strong> {release_date}</p>
+        <p><strong>Runtime:</strong> {runtime} minutes</p>
+      </div>
+      <h2>Overview</h2>
+      <p>{overview}</p>
+    </div>
       )
     }
 
