@@ -7,7 +7,8 @@ export default class SearchResults extends Component{
     }
 render(){
   return (
-    <div> searchResults {this.location.state.query}</div>
+    // <div> searchResults {this.location.state.query}</div>
+    <p>hola</p>
   )
     }
 } 

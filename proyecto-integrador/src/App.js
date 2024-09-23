@@ -8,6 +8,8 @@ import Populares from "./pages/Populares"
 import Estrenos from "./pages/Estrenos";
 import Detalle from "./pages/Detalle";
 import Favoritos from "./pages/Favoritos";
+import SearchForm from "./components/SearchForm/SearchForm";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/estrenos" exact component={Estrenos} />
         <Route path="/movies/:id" exact component={Detalle} />
         <Route path="/favoritos" exact component={Favoritos} />
+        <Route path="/search" component={SearchResults}/>
         <Route component={Error404} />
       </Switch>
       <Footer />
