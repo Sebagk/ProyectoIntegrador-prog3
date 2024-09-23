@@ -1,20 +1,51 @@
-import React from 'react'
+import React, { Component } from 'react'
 import SearchForm from '../components/SearchForm/SearchForm'
 import CardGrid from "../components/CardGrid/CardGrid"
 
-const Home = (props) => {
-  return (
-    <main>
-        {/* <SearchForm history={this.props.history} /> */}
-        <SearchForm history={props.history}/>
-        <h1>Populares</h1>
-        <CardGrid api={"https://api.themoviedb.org/3/movie/popular"} link={"/populares"} cantidad={5}/>
-        <h1>Estrenos</h1>
-        <CardGrid api={"https://api.themoviedb.org/3/movie/now_playing"} link={"/estrenos"} cantidad={5}/>
-    </main>
-  )
-}
+class home extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      populares: null,
+      estrenos: null
+    }
+  }
+  componentDidMount(){
+    fetch("https://api.themoviedb.org/3/movie/popular", options)
+    .then(response => response.json())
+    .then(data => this.setState({
+      populares: data.results,
+      isLoading: false
+    }))
+    .catch((error) => {
+      console.log(error);
+    })
+  
+  fetch("https://api.themoviedb.org/3/movie/now_playing", options)
+    .then(response => response.json())
+    .then(data => this.setState({
+      estrenos: data.results,
+      filteredMovies: data.results,
+      isLoading: false
+    }))
+    .catch((error) => {
+      console.log(error);
+    })
+  }
 
-export default Home
+  
+  
+  render() {
+    return (
+      <>
+      <CardGrid  link={this.state.populares}/>
+      </>
+    )
+  }}
 
 
+
+
+
+
+export default home
