@@ -41,7 +41,7 @@ class CardGrid extends Component {
             
           ))
         ) : (
-          <p>Cargando...</p>
+          <img src="/img/loader.webp" alt="loader" className="loader" />
         )}
         </div>
       </section>
