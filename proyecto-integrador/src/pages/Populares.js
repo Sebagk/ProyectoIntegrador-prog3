@@ -9,19 +9,21 @@ export class Populares extends Component {
       movies: [],
       filteredMovies: [],
       filterValue: "",
-      isLoading: true
+      isLoading: true,
+      actualPage: 1
     }
   }
   componentDidMount(){
     this.setState({
       isLoading: true
     })
-    fetch("https://api.themoviedb.org/3/movie/popular", options)
+    fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${this.state.actualPage}`, options)
     .then(response => response.json())
     .then(data => this.setState({
       movies: data.results,
       filteredMovies: data.results,
-      isLoading: false
+      isLoading: false,
+      actualPage: this.state.actualPage + 1
     }))
     .catch((error) => {
       console.log(error);
@@ -42,12 +44,24 @@ export class Populares extends Component {
       filteredMovies: this.state.movies
     })
   }
+
+  handleLoadMore(){
+    fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${this.state.actualPage}`, options)
+    .then(response => response.json())
+    .then(data => this.setState({
+        movies: this.state.movies.concat(data.results),
+        filteredMovies: this.state.movies.concat(data.results),
+        actualPage: this.state.actualPage + 1
+    }))
+}
+
   render() {
     return (
       <div>
         <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}/>
         <button onClick={()=>this.handleResetFilter()}> </button>
         {!this.state.isLoading && <CardGrid peliculas={this.state.filteredMovies}/>}
+        <button onClick={()=> this.handleLoadMore()}>Mostrar mas</button>
       </div>
     )
   }
