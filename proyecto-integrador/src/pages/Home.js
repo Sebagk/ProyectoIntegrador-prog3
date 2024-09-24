@@ -43,6 +43,7 @@ class home extends Component {
   render() {
     return (
       <>
+      <SearchForm history={this.props.history}/>
       <h1>Populares</h1>
       <CardGrid link={"/populares"} cantidad={5} peliculas={this.state.populares}/>
       <h1>Estrenos</h1>

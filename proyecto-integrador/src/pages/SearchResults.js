@@ -31,7 +31,10 @@ render(){
             <Card pelicula = {resultado} key={index}/>
           ))
         ) : (
-          <h1>No hay resultados</h1> 
+          <div>
+            <img src="/img/loader.webp" alt="loader" className="loader" />
+            <h1>No hay resultados</h1> 
+          </div>
         )}
     </div>
   )
