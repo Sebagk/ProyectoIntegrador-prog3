@@ -60,7 +60,7 @@ export class Estrenos extends Component {
       <div>
         <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}/>
         <button onClick={()=>this.handleResetFilter()}> </button>
-        {!this.state.isLoading && <CardGrid peliculas={this.state.filteredMovies}/>}
+        {!this.state.isLoading && <CardGrid peliculas={this.state.filteredMovies} link="/estrenos"/>}
         <button onClick={()=> this.handleLoadMore()}>Mostrar mas</button>
       </div>
     )
