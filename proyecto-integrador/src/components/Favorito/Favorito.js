@@ -12,8 +12,8 @@ class Favorito extends Component {
     componentDidMount(){
         const storage = localStorage.getItem('favoritos')
         if (storage !== null) {
-          const parsedArray = JSON.parse(storage)
-          const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
+          const parsedStorage = JSON.parse(storage)
+          const estaEnFavoritos = parsedStorage.includes(this.props.movie.id)
           this.setState({
             esFavorito: estaEnFavoritos
           })
@@ -23,9 +23,9 @@ class Favorito extends Component {
     agregarFavorito(){
         const storage = localStorage.getItem('favoritos')
         if (storage !== null) {
-          const parsedArray = JSON.parse(storage)
-          parsedArray.push(this.props.movie.id)
-          const stringArray = JSON.stringify(parsedArray)
+          const parsedStorage = JSON.parse(storage)
+          parsedStorage.push(this.props.movie.id)
+          const stringArray = JSON.stringify(parsedStorage)
           localStorage.setItem('favoritos', stringArray)
         } else {
           const primerMovie = [this.props.movie.id]
@@ -39,8 +39,8 @@ class Favorito extends Component {
       
       sacarFavorito(){
         const storage = localStorage.getItem('favoritos')
-        const parsedArray = JSON.parse(storage)
-        const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
+        const parsedStorage = JSON.parse(storage)
+        const favoritosRestantes = parsedStorage.filter(id => id !== this.props.movie.id)
         const stringArray = JSON.stringify(favoritosRestantes)
         localStorage.setItem('favoritos', stringArray)
         this.setState({

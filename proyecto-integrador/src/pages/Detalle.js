@@ -2,6 +2,7 @@ import React from 'react'
 import { options } from '../options'
 import { Component } from 'react'
 import Favorito from '../components/Favorito/Favorito'
+import './Style.css'
 
 
 class Detalle extends Component {
@@ -9,7 +10,7 @@ class Detalle extends Component {
         super(props)
 
         this.state = {
-            movie: {},
+            movie: [],
             id: props.match.params.id,
         }
     }
@@ -41,7 +42,7 @@ class Detalle extends Component {
       <h1 className="movie-title">{title}</h1>
       <div className="movie-info">
         <p><strong>Rating:</strong> {vote_average}</p>
-        {/* <p><strong>Genres:</strong></p>  ARREGLAR GENRES  */}
+        {/* <p><strong>Genres:</strong> {genres.map((genre) => genre.name).join(', ')} </p>   */}
         <p><strong>Release Date:</strong> {release_date}</p>
         <p><strong>Runtime:</strong> {runtime} minutes</p>
       </div>

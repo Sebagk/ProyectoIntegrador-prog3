@@ -1,6 +1,7 @@
 import CardGrid from "../components/CardGrid/CardGrid"
 import React, { Component } from 'react'
 import { options } from '../options'
+import './Style.css'
 
 export class Populares extends Component {
   constructor(props){
@@ -58,8 +59,10 @@ export class Populares extends Component {
   render() {
     return (
       <div>
-        <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}/>
-        <button onClick={()=>this.handleResetFilter()}> </button>
+        <div className='search-container'>
+          <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}className="search-input"/>
+          <button onClick={()=>this.handleResetFilter()} className="search-button"> Reset </button>
+        </div>
         {!this.state.isLoading && <CardGrid peliculas={this.state.filteredMovies} link="/populares"/>}
         <button onClick={()=> this.handleLoadMore()}>Mostrar mas</button>
       </div>
