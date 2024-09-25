@@ -60,11 +60,11 @@ export class Populares extends Component {
     return (
       <div>
         <div className='search-container'>
-          <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}className="search-input"/>
-          <button onClick={()=>this.handleResetFilter()} className="search-button"> Reset </button>
+          <input type='text' onChange={(e)=>this.handleFilterChange(e)} value={this.state.filterValue}className="search-input" placeholder="Busca un título popular"/>
+          <button onClick={()=>this.handleResetFilter()} className="search-button"> Limpiar </button>
         </div>
         {!this.state.isLoading && <CardGrid peliculas={this.state.filteredMovies} link="/populares"/>}
-        <button onClick={()=> this.handleLoadMore()}>Mostrar mas</button>
+        <button style={{margin:'20px', padding:'10px'}} onClick={()=> this.handleLoadMore()}>Mostrar mas +</button>
       </div>
     )
   }

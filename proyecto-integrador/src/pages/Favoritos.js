@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { options } from "../options";
 import Card from "../components/Card/Card";
+import './Style.css'
 
 
 class Favoritos extends Component {
@@ -37,11 +38,15 @@ class Favoritos extends Component {
         return (
 
             <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
+                display: 'flex', 
+                flexdDirection: 'row',
+                aligniItems: 'center',
                 gap: '20px',
-                backgroundColor: '#f9f9f9',
+                backgroundColor: 'rgb(249, 249, 249)',
+                justifyContent: 'space-evenly',
+                margin: '20px',
+                flexWrap: 'wrap',
+                minHeight: '100vh'
             }}>
             
                     {this.state.movies.length > 0 ? (

@@ -2,14 +2,9 @@ import React from "react";
 import { Component } from "react";
 import Card from "../Card/Card";
 import "./CardGrid.css"; 
-import { Link } from "react-router-dom";
 
 class CardGrid extends Component {
-  constructor(props) {
-    super(props);
-   
-  }
-  
+ 
   // componentDidMount() {
   //   const api = this.props.api;
   //   fetch(api, options)

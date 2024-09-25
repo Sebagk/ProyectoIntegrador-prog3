@@ -23,8 +23,8 @@ class SearchForm extends Component {
     render() {
         return (
             <div className="search-container">
-                <input onChange={(e) => this.handleInputChange(e)}type='text' name='query' value={this.state.query} className="search-input"/>
-                <button onClick={this.handleInputSubmit} className="search-button"> Search Movie </button>
+                <input onChange={(e) => this.handleInputChange(e)}type='text' placeholder='Buscar por título' name='query' value={this.state.query} className="search-input"/>
+                <button onClick={this.handleInputSubmit} className="search-button" > Buscar Película </button>
             </div>
         );
     }
