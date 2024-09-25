@@ -40,7 +40,7 @@ export class Populares extends Component {
   }
 
   handleResetFilter(){
-    this.sesState({
+    this.setState({
       filterValue: "",
       filteredMovies: this.state.movies
     })

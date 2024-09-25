@@ -28,11 +28,6 @@ class CardGrid extends Component {
   render() {
     return (
       <section className="card-grid-container">
-        <div className="link-container">
-            <Link to={this.props.link}>
-                <h4>Ver todas +</h4>
-            </Link>
-        </div>
           <div>
         {this.props.peliculas.length > 0 ? (
           this.props.peliculas.slice(0, this.props.cantidad).map((pelicula, index) => (

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchForm from '../components/SearchForm/SearchForm'
 import CardGrid from "../components/CardGrid/CardGrid"
 import { options } from '../options'
+import { Link } from 'react-router-dom'
 
 class home extends Component {
   constructor(props){
@@ -45,9 +46,19 @@ class home extends Component {
       <>
       <SearchForm history={this.props.history}/>
       <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#333', fontFamily: 'Arial, sans-serif' }}>Populares</h1>
-      <CardGrid link={"/populares"} cantidad={5} peliculas={this.state.populares}/>
+      <div className="link-container">
+            <Link to={"/populares"}>
+                <h4>Ver todas +</h4>
+            </Link>
+        </div>
+      <CardGrid cantidad={5} peliculas={this.state.populares}/>
       <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#333', fontFamily: 'Arial, sans-serif'}}>Estrenos</h1>
-      <CardGrid link={"/estrenos"} cantidad={5} peliculas={this.state.estrenos}/>
+      <div className="link-container">
+            <Link to={"/estrenos"}>
+                <h4>Ver todas +</h4>
+            </Link>
+        </div>
+      <CardGrid cantidad={5} peliculas={this.state.estrenos}/>
       </>
     )
   }}
