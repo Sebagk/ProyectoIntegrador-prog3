@@ -42,7 +42,7 @@ class Detalle extends Component {
       <h1 className="movie-title">{title}</h1>
       <div className="movie-info">
         <p><strong>Rating:</strong> {vote_average}</p>
-        {/* <p><strong>Genres:</strong> {genres.map((genre) => genre.name).join(', ')} </p>   */}
+        <p><strong>Genres:</strong> {genres && genres.map((genre) => genre.name).join(', ')} </p>  
         <p><strong>Release Date:</strong> {release_date}</p>
         <p><strong>Runtime:</strong> {runtime} minutes</p>
       </div>
