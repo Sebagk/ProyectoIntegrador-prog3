@@ -36,7 +36,7 @@
 }
 
 .toggle-button {
-  background-color: #007bff;
+  background-color: #ffb300;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -47,7 +47,7 @@
 }
 
 .toggle-button:hover {
-  background-color: #0056b3;
+  background-color: #f98379;
 }
 
 .show {
@@ -72,7 +72,7 @@
 }
 .favoritos-button {
   margin-top: 10px;
-  background-color: #28a745;
+  background-color: #a71d2a;
   color: white;
   border: none;
   padding: 10px 15px;

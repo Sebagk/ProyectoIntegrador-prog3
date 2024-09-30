@@ -47,14 +47,14 @@ class home extends Component {
     return (
       <>
         <SearchForm history={this.props.history} />
-        <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#333', fontFamily: 'Arial, sans-serif' }}>Populares</h1>
+        <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#fff', fontFamily: 'Arial, sans-serif' }}>Populares</h1>
         <CardGrid cantidad={5} peliculas={this.state.populares} />
         <div className="link-container">
           <Link to={"/populares"}>
             <h4>Ver todas +</h4>
           </Link>
         </div>
-        <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#333', fontFamily: 'Arial, sans-serif' }}>Estrenos</h1>
+        <h1 style={{ textAlign: 'center', marginTop: '50px', color: '#fff', fontFamily: 'Arial, sans-serif' }}>Estrenos</h1>
         <CardGrid cantidad={5} peliculas={this.state.estrenos} />
         <div className="link-container">
           <Link to={"/estrenos"}>

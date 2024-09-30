@@ -8,7 +8,7 @@
 }
 
 .card-grid-container h4 {
-  color: #007bff;
+  color: #a71d2a;
   margin-bottom: 15px;
   cursor: pointer;
   transition: color 0.3s;
@@ -38,13 +38,13 @@
 
 .link-container h4 {
   font-size: 1.2em;
-  color: blue;
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
-  text-decoration: navy;
+  text-decoration: #ffffff;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .link-container h4:hover {
-  color: red;
+  color: #f98379;
 }
